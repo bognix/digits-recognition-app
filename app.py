@@ -1,12 +1,14 @@
-from fastai.vision.all import *
+from typing import Any, Dict
+
 import gradio as gr
+from fastai.vision.all import *
 
 learn_inf = load_learner('export.pkl')
 
 categories = learn_inf.dls.vocab
 
-def classify_digit(digit_img):
-    pred, idx, probs = learn_inf.predict(digit_img)
+def classify_digit(digit_img: Any) -> Dict[str, float]:
+    _, _, probs = learn_inf.predict(digit_img)
 
     return dict(zip(categories, map(float, probs)))
 
