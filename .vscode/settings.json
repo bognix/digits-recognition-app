@@ -41,5 +41,8 @@
     }
   ],
   "editor.linkedEditing": true,
-  "editor.minimap.enabled": false
+  "editor.minimap.enabled": false,
+  "cSpell.words": [
+    "backpropagation"
+  ]
 }
